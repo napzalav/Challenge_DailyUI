@@ -12,13 +12,23 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
+    background: url('img/graffiti.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .wrapper{
     width: 420px;
-    background: fuchsia;
+    /* background: fuchsia; */
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(40px);
+    box-shadow: 0 0 20px;
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, .2); */
     color: aliceblue;
+    border-radius: 10px;
+    padding: 30px 40px;
 }
 
 .wrapper h1{
@@ -64,4 +74,52 @@ body{
     justify-content: space-between;
     font-size: 14px;
     margin: -15px 0 15px;
+}
+
+/* cambio de color del checkbox */
+.remember-forgot label input{
+    accent-color: aliceblue;
+    margin-right: 5px;
+}
+
+.remember-forgot a{
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+    color: Yellow;
+}
+
+.wrapper .btn{
+    width: 100%;
+    height: 45px;
+    background: aliceblue;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgb(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.wrapper .register-link{
+    font-size: 14px;
+    text-align: center;
+    /* margin-top: 20px; */
+    margin: 20px 0 15px;
+}
+
+.register-link p a{
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover{
+    text-decoration: underline;
+    color: yellow;
 }
