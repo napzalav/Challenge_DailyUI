@@ -90,3 +90,9 @@ body {
     font-size: 22px;
     text-transform: uppercase;
 }
+
+.delantera .flexbox{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
