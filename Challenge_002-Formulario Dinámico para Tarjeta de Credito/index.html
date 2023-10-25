@@ -4,18 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DailyUI - Credit Card Checkout</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,300&family=Poppins:wght@300;400;500;600;700&family=Roboto:ital@1&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="contenedor">
+        <!-- seccion para la tarjeta -->
         <section class="tarjeta" id="tarjeta">
             <div class="delantera">
                 <div class="logo-marca">
-                    <img src="" alt="">
+                    <img src="img/logos/visa.png" alt="">
                 </div>
+
+                <img src="img/chip-tarjeta.png" class="chip" alt="">
+
+                <!-- uso las clases para dar estilos CSS, mientras que los ID los uso para acceder a los grupos con JS-->
+                <div class="datos">
+                    <div class="grupo">
+                        <p class="label">Number Card</p>
+                        <p class="numero">#### #### #### ####</p>
+                    </div>
+                    <div class="flexbox">
+                        <div class="grupo" id="nombre">
+                            <p class="label">Name Card</p>
+                            <p class="nombre">Jhon Doe</p>
+                        </div>
+
+                        <!-- se colocan span separados para poder diferenciarlos a la hora de usar JS -->
+                        <div class="grupo" id="expiracion">
+                            <p class="label">Expiracion</p>
+                            <p class="expiracion"><span class="mes">MM</span> / <span class="year">AA</span></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="trasera">
+                
             </div>
         </section>
     </div>
+
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
 </body>
 </html>
