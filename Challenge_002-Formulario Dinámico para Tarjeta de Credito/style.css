@@ -1,3 +1,9 @@
+/* Utilizo 3 capas:
+    z-index: 1; ==>para el formulario
+    z-index: 2; ==>para la tarjeta
+    z-index: 3; ==>para el boton
+ */
+
 *{
     padding: 0;
     margin: 0;
@@ -175,4 +181,35 @@ body {
 .trasera .link-banco{
     font-size: 14px;
     color: #fff;
+}
+
+/* contenedor Boton */
+.contenedor-btn .btn-abrir-formulario{
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 20px;
+    background: rebeccapurple;
+    /* background: #2364d2; */
+    color: #fff;
+    position: relative;
+    top: -25px;
+    z-index: 3;
+    border-radius: 100%;
+    box-shadow: -5px 4px 5px rgba(24, 56, 182, 0.4);
+    padding: 5px;
+    transition: all .2s ease;
+    border-color: aquamarine;
+    /* border: none; */
+    cursor: pointer;
+}
+
+.contenedor-btn .btn-abrir-formulario:hover{
+    background: blueviolet;
+    /* background: #1050b1; */
+}
+
+/* este transform es para que al hacer click en el boton rote 45 grados, pasando de + a x */
+.contenedor-btn .btn-abrir-formulario.active{
+	transform: rotate(45deg);
 }
