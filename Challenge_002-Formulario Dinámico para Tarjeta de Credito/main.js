@@ -1,6 +1,7 @@
 // en esta variable vamos a guardar nuestra tarjeta y acceder a ella
 const tarjeta = document.querySelector('#tarjeta'),
-    btnAbrirFormulario = document.querySelector('#btn-abrir-formulario');
+    btnAbrirFormulario = document.querySelector('#btn-abrir-formulario'),
+    formulario = document.querySelector('#formulario-tarjeta');
 
 // Rotacion de la tarjeta
 tarjeta.addEventListener('click', () => {
@@ -10,4 +11,6 @@ tarjeta.addEventListener('click', () => {
 // Rotacion de boton
 btnAbrirFormulario.addEventListener('click', () => {
 	btnAbrirFormulario.classList.toggle('active');
-})
+    formulario.classList.toggle('active');
+});
+
