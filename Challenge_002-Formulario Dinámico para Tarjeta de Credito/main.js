@@ -42,6 +42,7 @@ formulario.inputNumero.addEventListener('keyup', (e)=>{
 
     // usamos Expresiones Regulares (https://regexr.com/ => Cheatsheet)---------> //g
     formulario.inputNumero.value = valorInput
+
     //usamos \s para quitar los espacios en blanco, cada vez q se encuentre un espacio en blanco lo reemplazaremos por nada ('')
     .replace(/\s/g, '')
 
@@ -56,6 +57,9 @@ formulario.inputNumero.addEventListener('keyup', (e)=>{
 
     //elimina el ultimo epaciado
     .trim();
+
+    //asi es como quedaria de manera consecutiva solo que la separamos para q pueda entenderse que hace cada parte
+    //formulario.inputNumero.value = valorInput.replace(/\s/g, '').replace(/\D/g, '').replace(/([0-9]{4})/g, '$1 ').trim();
 });
 
 
