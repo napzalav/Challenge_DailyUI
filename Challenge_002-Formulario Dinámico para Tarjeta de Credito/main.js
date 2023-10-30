@@ -32,3 +32,32 @@ for(let i = yearActual; i <= yearActual + 8; i++){
     opcion.innerText = i;
     formulario.selectYear.appendChild(opcion);
 }
+
+// Input numero de tarjeta
+// validaremos que en el input de Numero de tarjeta no se ingresen caracteres erroneos
+formulario.inputNumero.addEventListener('keyup', (e)=>{
+    // console.log(e);
+    let valorInput = e.target.value;
+    // console.log(valorInput);
+
+    // usamos Expresiones Regulares (https://regexr.com/ => Cheatsheet)---------> //g
+    formulario.inputNumero.value = valorInput
+    //usamos \s para quitar los espacios en blanco, cada vez q se encuentre un espacio en blanco lo reemplazaremos por nada ('')
+    .replace(/\s/g, '')
+
+    //usamos \D para eliminar las letras, cada vez q encuentre una la reemplazara por nada ('')
+    .replace(/\D/g, '')
+
+    //ordenamos el valorInput en grupos de 4 digitos y agregamos un espacio entre ellos(1111 2222 3333 4444)
+    //([0-9])=>busca los digitos del 0 al 9 y los agrupa
+    //{4}=>esto le dice q cada 4 caracteres haga un grupo
+    //$1 =>esto es para agregar un espacio despues de cada grupo de 4 caracteres
+    .replace(/([0-9]{4})/g, '$1 ')
+
+    //elimina el ultimo epaciado
+    .trim();
+});
+
+
+
+
