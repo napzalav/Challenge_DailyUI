@@ -10,3 +10,5 @@ Diseña un formulario o página de pago con tarjeta de crédito. No olvides los 
 Here we have project screenshot
 
 Captura de pantalla del proyecto:
+
+![screenshot](draft002.jpg)
