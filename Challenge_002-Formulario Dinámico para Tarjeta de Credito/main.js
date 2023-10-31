@@ -1,4 +1,4 @@
-// en esta variable vamos a guardar nuestra tarjeta y acceder a ella
+// en estas variable vamos a guardar los datos de nuestra tarjeta para poder acceder a ella
 const tarjeta = document.querySelector('#tarjeta'),
     btnAbrirFormulario = document.querySelector('#btn-abrir-formulario'),
     formulario = document.querySelector('#formulario-tarjeta'),
