@@ -38,7 +38,7 @@ body {
     transition: .3s ease all;
     transform: rotateY(0deg);
     transform-style: preserve-3d;
-    backface-visibility: hidden;
+    /* backface-visibility: hidden; */
     cursor: pointer;
     z-index: 2;
     /* background: black; */
@@ -64,6 +64,8 @@ body {
     width: 100%;
     background: url(img/bg-tarjeta/bg-tarjeta-03.jpg);
     background-size: cover;
+    /* backface-visibility: hidden; */
+
 }
 
 .delantera .logo-marca{

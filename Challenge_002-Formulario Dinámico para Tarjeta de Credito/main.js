@@ -1,7 +1,17 @@
 // en esta variable vamos a guardar nuestra tarjeta y acceder a ella
 const tarjeta = document.querySelector('#tarjeta'),
     btnAbrirFormulario = document.querySelector('#btn-abrir-formulario'),
-    formulario = document.querySelector('#formulario-tarjeta');
+    formulario = document.querySelector('#formulario-tarjeta'),
+    numeroTarjeta = document.querySelector('#tarjeta .numero'),
+    nombreTarjeta = document.querySelector('#tarjeta .nombre'),
+    logoMarca = document.querySelector('#logo-marca');
+
+// Volteamos la tarjeta para mostrar el frente si el usuario completa datos
+const mostrarFrente = ()=>{
+    if (tarjeta.classList.contains('active')) {
+        tarjeta.classList.remove('active');
+    }
+}
 
 // Rotacion de la tarjeta
 tarjeta.addEventListener('click', () => {
@@ -60,6 +70,31 @@ formulario.inputNumero.addEventListener('keyup', (e)=>{
 
     //asi es como quedaria de manera consecutiva solo que la separamos para q pueda entenderse que hace cada parte
     //formulario.inputNumero.value = valorInput.replace(/\s/g, '').replace(/\D/g, '').replace(/([0-9]{4})/g, '$1 ').trim();
+
+    //cambiamos el contenido de numeroTarjeta en HTML y lo reemplazamos por el valorInput que es el que entra por el formulario
+    numeroTarjeta.textContent = valorInput;
+
+    //validamos que el contenido dentro de numeroTarjeta no se encuentre vacio porque genera un salto de linea en nuestra estructura HTML y para hacer esto realizo una estructura de control IF que detecte si esta vacio entonces coloque un texto predeterminado
+    if(valorInput == ''){
+        numeroTarjeta.textContent = '#### #### #### ####';
+
+        logoMarca.innerHTML = '';
+    }
+
+    if (valorInput[0] == 4) { //para agregar el logo de VISA
+        logoMarca.innerHTML = '';
+        const imagen = document.createElement('img');
+        imagen.src = 'img/logos/visa.png';
+        logoMarca.appendChild(imagen);
+    } else if (valorInput[0] == 5) { //para agregar el logo de MASTERCARD
+        logoMarca.innerHTML = '';
+        const imagen = document.createElement('img');
+        imagen.src = 'img/logos/mastercard.png';
+        logoMarca.appendChild(imagen);
+    }
+
+    // si la tarjeta esta invertida y el usuario empieza a cargar datos, volteamos la tarjeta para que se visualicen en la Card
+    mostrarFrente();
 });
 
 
