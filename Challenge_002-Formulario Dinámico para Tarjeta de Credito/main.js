@@ -4,7 +4,8 @@ const tarjeta = document.querySelector('#tarjeta'),
     formulario = document.querySelector('#formulario-tarjeta'),
     numeroTarjeta = document.querySelector('#tarjeta .numero'),
     nombreTarjeta = document.querySelector('#tarjeta .nombre'),
-    logoMarca = document.querySelector('#logo-marca');
+    logoMarca = document.querySelector('#logo-marca'),
+    firma = document.querySelector('#tarjeta .firma p');
 
 // Volteamos la tarjeta para mostrar el frente si el usuario completa datos
 const mostrarFrente = ()=>{
@@ -93,10 +94,30 @@ formulario.inputNumero.addEventListener('keyup', (e)=>{
         logoMarca.appendChild(imagen);
     }
 
-    // si la tarjeta esta invertida y el usuario empieza a cargar datos, volteamos la tarjeta para que se visualicen en la Card
+    // si la tarjeta esta invertida y el usuario empieza a cargar datos, volteamos la tarjeta para que se visualicen en la parte frontal de la Card
     mostrarFrente();
 });
 
+// Input nombre de tarjeta
+// validaremos que en el input de Nombre de tarjeta no se ingresen caracteres erroneos
+formulario.inputNombre.addEventListener('keyup', (e)=>{
+    let valorInput = e.target.value;
 
+    //buscamos todos los numeros y los reemplazamos por nada
+    formulario.inputNombre.value = valorInput.replace(/[0-9]/g, '');
 
+    //cambiamos el contenido de nombreTarjeta en HTML y lo reemplazamos por el valorInput que es el que entra por el formulario
+    nombreTarjeta.textContent = valorInput;
+
+    //agregamos el nombre almacenado en valorInput a la parte posterior de la tarjeta a modo de Firma
+    firma.textContent = valorInput;
+
+    //si el contenido dentro de nombreTarjeta se encuentra vacio, se autocompletara por defecto con el valor de 'Jhon Doe'
+    if (valorInput == '') {
+        nombreTarjeta.textContent = 'Jhon Doe';
+    }
+
+    // si la tarjeta esta invertida y el usuario empieza a cargar datos, volteamos la tarjeta para que se visualicen en la parte frontal de la Card
+    mostrarFrente();
+});
 
