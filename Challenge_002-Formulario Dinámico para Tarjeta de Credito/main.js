@@ -144,3 +144,23 @@ formulario.selectYear.addEventListener('change', (e)=>{
 
     mostrarFrente();
 });
+
+//input de CCV
+formulario.inputCCV.addEventListener('keyup', ()=>{
+    //si quisieramos voltear la Card muchas veces podriamos hacer una funcion similar a mostrarFrente() para reutilizar codigo
+    //en este caso solo necesitamos voltear la Card para visualizar la parte dorsal solo una vez, asi q se usa un condicional if
+    if (!tarjeta.classList.contains('active')) {
+        tarjeta.classList.toggle('active');
+    }
+
+    //quiero acceder al valor de inputCCV y que sea igual al mismo valor pero con el metodo de 'replace()' para agregar las validaciones mediante las expresiones regulares
+    formulario.inputCCV.value = formulario.inputCCV.value
+    //para eliminar los espacios
+    .replace(/\s/g, '')
+
+    //para eliminar las letras
+    .replace(/\D/g, '');
+
+    //para visualizar el cambio en la Card
+    ccv.textContent = formulario.inputCCV.value;
+});
