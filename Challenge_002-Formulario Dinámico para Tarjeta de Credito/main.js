@@ -5,7 +5,10 @@ const tarjeta = document.querySelector('#tarjeta'),
     numeroTarjeta = document.querySelector('#tarjeta .numero'),
     nombreTarjeta = document.querySelector('#tarjeta .nombre'),
     logoMarca = document.querySelector('#logo-marca'),
-    firma = document.querySelector('#tarjeta .firma p');
+    firma = document.querySelector('#tarjeta .firma p'),
+    mesExpiracion = document.querySelector('#tarjeta #expiracion .mes'),
+    yearExpiracion = document.querySelector('#tarjeta #expiracion .year'),
+    ccv = document.querySelector('#tarjeta .ccv');
 
 // Volteamos la tarjeta para mostrar el frente si el usuario completa datos
 const mostrarFrente = ()=>{
@@ -121,3 +124,23 @@ formulario.inputNombre.addEventListener('keyup', (e)=>{
     mostrarFrente();
 });
 
+//Select mes
+//validaremos que en el select de mes se capture cualquier cambio realizado, por eso se escucha el evento 'change'
+formulario.selectMes.addEventListener('change', (e)=>{
+
+    //para que se refleje en nuestra Card necesitamos acceder a la variable mesExpiracion y cambiar el contenido por el valor del target capturado
+    mesExpiracion.textContent = e.target.value;
+
+    mostrarFrente();
+});
+
+//Select año
+//al igual que en el mes, validaremos que en el select de año se capture cualquier cambio realizado, por eso se escucha el evento 'change'
+formulario.selectYear.addEventListener('change', (e)=>{
+
+    //para que se refleje en nuestra Card necesitamos acceder a la variable yearExpiracion y cambiar el contenido por el valor del target capturado
+    //para mostrar los ultimos 2 digitos en Expiracion usamos el metodo 'slice'
+    yearExpiracion.textContent = e.target.value.slice(2);
+
+    mostrarFrente();
+});
